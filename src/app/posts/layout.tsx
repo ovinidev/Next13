@@ -1,4 +1,5 @@
-/* eslint-disable react/jsx-key */
+"use client";
+import { Stack, Link as ChakraLink } from "@chakra-ui/react";
 import Link from "next/link";
 import { use } from "react";
 
@@ -12,17 +13,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const { posts } = use(getPosts());
 
   return (
-    <div>
-      <ul>
+    <main>
+      <title>Posts</title>
+      {children}
+
+      <Stack spacing="4" mt="2rem">
         {posts.map((product: any) => {
           return (
-            <Link href={`/posts/${product.id}`}>
-              <h1>{product.title}</h1>
+            <Link key={product.id} href={`/posts/${product.id}`}>
+              <ChakraLink>{product.title}</ChakraLink>
             </Link>
           );
         })}
-      </ul>
-      <div>{children}</div>
-    </div>
+      </Stack>
+    </main>
   );
 }

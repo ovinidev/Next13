@@ -1,18 +1,25 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
+"use client";
+import { ChakraProvider } from "@chakra-ui/react";
+import { ReactNode } from "react";
+import { theme } from "../styles/theme";
 import NavBar from "./navBar";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html>
-      <head></head>
+      <head>
+        <title>Home</title>
+      </head>
       <body>
-        <NavBar />
+        <ChakraProvider theme={theme}>
+          <NavBar />
 
-        <div>{children}</div>
+          <div>{children}</div>
+        </ChakraProvider>
       </body>
     </html>
   );
