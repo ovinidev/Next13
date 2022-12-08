@@ -1,8 +1,8 @@
 "use client";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { theme } from "../styles/theme";
-import NavBar from "./navBar";
+import Header from "./Header";
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body>
         <ChakraProvider theme={theme}>
-          <NavBar />
+          <Header />
 
           <div>{children}</div>
         </ChakraProvider>

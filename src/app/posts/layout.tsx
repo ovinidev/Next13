@@ -17,8 +17,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <title>Posts</title>
       {children}
 
-      <Stack spacing="4" mt="2rem">
-        {posts.map((product: any) => {
+      <Stack spacing="2" mt="2rem" px="24" fontSize="1.2rem">
+        {posts?.map((product: any) => {
           return (
             <Link key={product.id} href={`/posts/${product.id}`}>
               <ChakraLink>{product.title}</ChakraLink>
