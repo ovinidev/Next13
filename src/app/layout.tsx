@@ -13,12 +13,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html>
       <head>
         <title>Home</title>
+        <link
+          rel="shortcut icon"
+          href="https://cdn.worldvectorlogo.com/logos/next-js.svg"
+          type="image/x-icon"
+        />
       </head>
       <body>
         <ChakraProvider theme={theme}>
           <Header />
 
-          <div>{children}</div>
+          {children}
         </ChakraProvider>
       </body>
     </html>
