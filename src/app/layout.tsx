@@ -32,13 +32,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
          })(window, document, "clarity", "script", "ex63wnhjkq");`,
           }}
         />
-        ;
       </head>
       <body>
         <ChakraProvider theme={theme}>
           <Header />
 
-          {children}
+          <Flex direction="column" px="24">
+            {children}
+          </Flex>
         </ChakraProvider>
       </body>
     </html>

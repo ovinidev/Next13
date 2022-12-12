@@ -1,5 +1,5 @@
 "use client";
-import { Stack, Link as ChakraLink } from "@chakra-ui/react";
+import { Stack, Link as ChakraLink, Box } from "@chakra-ui/react";
 import Link from "next/link";
 import { use } from "react";
 
@@ -13,11 +13,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const { posts } = use(getPosts());
 
   return (
-    <main>
+    <Box>
       <title>Posts</title>
       {children}
 
-      <Stack spacing="2" mt="2rem" px="24" fontSize="1.2rem">
+      <Stack spacing="2" mt="2rem" fontSize="1.2rem">
         {posts?.map((product: any) => {
           return (
             <Link key={product.id} href={`/posts/${product.id}`}>
@@ -26,6 +26,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           );
         })}
       </Stack>
-    </main>
+    </Box>
   );
 }

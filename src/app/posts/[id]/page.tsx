@@ -18,7 +18,7 @@ export default function Page({ params }: PageProps) {
   const { title, body } = use(getDetails(params.id));
 
   return (
-    <Flex px="24" direction="column" mt="2rem">
+    <Flex direction="column" mt="2rem">
       <Text>{title}</Text>
       <Text>{body}</Text>
     </Flex>
